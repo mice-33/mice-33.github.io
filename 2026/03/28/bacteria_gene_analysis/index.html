@@ -1,0 +1,500 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>细菌基因生物信息学分析通用教程（从零到完整流程） | 吱吱</title><meta name="author" content="mice33"><meta name="copyright" content="mice33"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="详细介绍一套通用的细菌基因生物信息学分析流程教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="细菌基因生物信息学分析通用教程（从零到完整流程）">
+<meta property="og:url" content="http://example.com/2026/03/28/bacteria_gene_analysis/index.html">
+<meta property="og:site_name" content="吱吱">
+<meta property="og:description" content="详细介绍一套通用的细菌基因生物信息学分析流程教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/mice33.png">
+<meta property="article:published_time" content="2026-03-28T15:41:55.085Z">
+<meta property="article:modified_time" content="2026-03-30T02:12:26.034Z">
+<meta property="article:author" content="mice33">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/mice33.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "细菌基因生物信息学分析通用教程（从零到完整流程）",
+  "url": "http://example.com/2026/03/28/bacteria_gene_analysis/",
+  "image": "http://example.com/img/mice33.png",
+  "datePublished": "2026-03-28T15:41:55.085Z",
+  "dateModified": "2026-03-30T02:12:26.034Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "mice33",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/mice33.png"><link rel="canonical" href="http://example.com/2026/03/28/bacteria_gene_analysis/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '细菌基因生物信息学分析通用教程（从零到完整流程）',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/mice33.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">吱吱</span></a><a class="nav-page-title" href="/"><span class="site-name">细菌基因生物信息学分析通用教程（从零到完整流程）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">细菌基因生物信息学分析通用教程（从零到完整流程）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-28T15:41:55.085Z" title="发表于 2026-03-28 23:41:55">2026-03-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-30T02:12:26.034Z" title="更新于 2026-03-30 10:12:26">2026-03-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E4%BF%A1%E5%88%86%E6%9E%90/">生信分析</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E4%BF%A1%E5%88%86%E6%9E%90/%E7%BB%86%E8%8F%8C/">细菌</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E4%BF%A1%E5%88%86%E6%9E%90/%E7%BB%86%E8%8F%8C/%E5%9F%BA%E5%9B%A0%E5%88%86%E6%9E%90/">基因分析</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/2026/03/28/bacteria_gene_analysis/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/03/28/bacteria_gene_analysis/#post-comment"><span class="waline-comment-count" data-path="/2026/03/28/bacteria_gene_analysis/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>这是一套<strong>通用的细菌基因生物信息学分析流程教程</strong></p>
+<p>特点：</p>
+<p>✔ 工具简单（基本网页 + 少量命令行）<br>✔ 可复现<br>✔ 结构完整  </p>
+<h1 id="二、整体流程（核心框架）"><a href="#二、整体流程（核心框架）" class="headerlink" title="二、整体流程（核心框架）"></a>二、整体流程（核心框架）</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">基因序列</span><br><span class="line">↓</span><br><span class="line">蛋白翻译</span><br><span class="line">↓</span><br><span class="line">理化性质分析</span><br><span class="line">↓</span><br><span class="line">亚细胞定位</span><br><span class="line">↓</span><br><span class="line">结构域分析</span><br><span class="line">↓</span><br><span class="line">三级结构预测</span><br><span class="line">↓</span><br><span class="line">系统发育分析</span><br><span class="line">↓</span><br><span class="line">调控与功能分析</span><br><span class="line">↓</span><br><span class="line">密码子偏好分析</span><br></pre></td></tr></table></figure>
+
+<p>👉 记住一句话：</p>
+<blockquote>
+<p>结构 + 定位 + 进化 + 调控 &#x3D; 完整功能推断</p>
+</blockquote>
+<hr>
+<h1 id="三、操作"><a href="#三、操作" class="headerlink" title="三、操作"></a>三、操作</h1><h2 id="步骤1：获取基因与蛋白序列"><a href="#步骤1：获取基因与蛋白序列" class="headerlink" title="步骤1：获取基因与蛋白序列"></a>步骤1：获取基因与蛋白序列</h2><p>来源：</p>
+<ul>
+<li>NCBI Genome &#x2F; RefSeq</li>
+<li>本地测序数据</li>
+</ul>
+<p>常见文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.fna   <span class="comment"># 基因组</span></span><br><span class="line">.faa   <span class="comment"># 蛋白</span></span><br><span class="line">.ffn   <span class="comment"># CDS</span></span><br></pre></td></tr></table></figure>
+
+<p>👉 目标：拿到</p>
+<ul>
+<li>CDS序列</li>
+<li>蛋白序列</li>
+<li>基因组</li>
+</ul>
+<h3 id="基本特征分析："><a href="#基本特征分析：" class="headerlink" title="基本特征分析："></a>基本特征分析：</h3><p><a target="_blank" rel="noopener" href="https://bioinformatics.nl/cgi-bin/emboss/cusp">EMBOSS: cusp</a></p>
+<p>输入CDS 序列进行密码子使用分析，得到：</p>
+<ul>
+<li>基因全长</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>长度</th>
+<th>一般含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;300 bp</td>
+<td>小肽&#x2F;调控蛋白</td>
+</tr>
+<tr>
+<td>300–1500 bp</td>
+<td>常规酶蛋白（最常见）</td>
+</tr>
+<tr>
+<td>&gt;2000 bp</td>
+<td>多结构域蛋白</td>
+</tr>
+</tbody></table>
+<ul>
+<li>编码AA数目</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>长度</th>
+<th>结构特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;100 aa</td>
+<td>小蛋白</td>
+</tr>
+<tr>
+<td>100–400 aa</td>
+<td>单结构域</td>
+</tr>
+<tr>
+<td>&gt;400 aa</td>
+<td>多结构域</td>
+</tr>
+</tbody></table>
+<ul>
+<li>GC含量–&gt; 与翻译效率和mRNA稳定性有关</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>GC含量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AT-rich</td>
+<td>&lt;40%</td>
+</tr>
+<tr>
+<td>平衡型</td>
+<td>40–60%</td>
+</tr>
+<tr>
+<td>GC-rich</td>
+<td>&gt;60%</td>
+</tr>
+</tbody></table>
+<p>如果某基因 GC ≠ 基因组平均值</p>
+<p>可能说明：</p>
+<blockquote>
+<p><strong>水平基因转移（HGT）</strong></p>
+</blockquote>
+<h2 id="步骤2：蛋白理化性质分析"><a href="#步骤2：蛋白理化性质分析" class="headerlink" title="步骤2：蛋白理化性质分析"></a>步骤2：蛋白理化性质分析</h2><p>工具：ProtParam<a target="_blank" rel="noopener" href="https://web.expasy.org/protparam/">Expasy - ProtParam</a></p>
+<p>输入：蛋白序列</p>
+<p>输出：</p>
+<ul>
+<li>分子量</li>
+<li>pI</li>
+<li>GRAVY</li>
+<li>稳定性</li>
+</ul>
+<p>👉 作用：</p>
+<blockquote>
+<p>判断蛋白是稳定&#x2F;亲水&#x2F;膜蛋白趋势</p>
+</blockquote>
+<p>工具：ProtScale<a target="_blank" rel="noopener" href="https://web.expasy.org/protscale/">Expasy - ProtScale</a></p>
+<h3 id="步骤3：亚细胞定位"><a href="#步骤3：亚细胞定位" class="headerlink" title="步骤3：亚细胞定位"></a>步骤3：亚细胞定位</h3><p>工具：PSORTb<a target="_blank" rel="noopener" href="https://psort.org/psortb/">PSORTb Subcellular Localization Prediction Tool - version 3.0</a></p>
+<p>关注：</p>
+<ul>
+<li>Cytoplasmic</li>
+<li>Membrane</li>
+<li>Extracellular</li>
+</ul>
+<p>👉 关键判断：</p>
+<ul>
+<li>是否分泌蛋白</li>
+</ul>
+<h3 id="步骤4：结构域分析"><a href="#步骤4：结构域分析" class="headerlink" title="步骤4：结构域分析"></a>步骤4：结构域分析</h3><p>工具：</p>
+<ul>
+<li>NCBI CDD<a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/Structure/cdd/wrpsb.cgi?SEQUENCE">CD-Search: New Query</a></li>
+<li>Pfam &#x2F; InterPro<a target="_blank" rel="noopener" href="https://www.ebi.ac.uk/interpro/">InterPro</a></li>
+</ul>
+<p>关注：</p>
+<ul>
+<li>E-value &lt; 1e-5</li>
+</ul>
+<p>👉 核心意义：</p>
+<blockquote>
+<p>决定蛋白“干什么”</p>
+</blockquote>
+<h3 id="步骤5：三级结构预测"><a href="#步骤5：三级结构预测" class="headerlink" title="步骤5：三级结构预测"></a>步骤5：三级结构预测</h3><p>工具：</p>
+<ul>
+<li>AlphaFold &#x2F; ColabFold</li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>PDB &#x2F; CIF</li>
+</ul>
+<p>验证：</p>
+<ul>
+<li>PROCHECK（Ramachandran）<a target="_blank" rel="noopener" href="https://www.ebi.ac.uk/thornton-srv/databases/pdbsum/Generate.html">PDBsum Generate</a></li>
+</ul>
+<p>👉 判定标准：</p>
+<ul>
+<li>最优区 ≥ 90%（理想）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>工具</th>
+<th>本质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AlphaFold指标</td>
+<td>pLDDT &#x2F; PAE</td>
+<td>AI预测置信度</td>
+</tr>
+<tr>
+<td>PROCHECK</td>
+<td>Ramachandran</td>
+<td>几何结构合理性</td>
+</tr>
+</tbody></table>
+<p>注：现在的alphafold3输出的各种指标就足够判断了，不一定非要做PROCHECK</p>
+<h3 id="步骤6：系统发育分析"><a href="#步骤6：系统发育分析" class="headerlink" title="步骤6：系统发育分析"></a>步骤6：系统发育分析</h3><p>流程：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BLASTp → MAFFT → TrimAl → IQ-TREE</span><br></pre></td></tr></table></figure>
+
+<p>BLASTp找同源蛋白，根据亲缘关系远近选出合适的序列，使用MAFFT软件（–auto参数）进行多序列比对，并利用TrimAl（-gt 0.8）去除低质量比对区域。基于修剪后的序列，采用IQ-TREE<a target="_blank" rel="noopener" href="https://itol.embl.de/">iTOL: Interactive Tree Of Life</a>构建最大似然系统发育树，并利用ModelFinder自动选择最优替换模型，进行1000次ultrafast bootstrap重复评估分支支持率。</p>
+<p>意义：</p>
+<ul>
+<li>判断进化关系</li>
+<li>判断是否保守蛋白</li>
+</ul>
+<h3 id="步骤7：启动子与调控元件"><a href="#步骤7：启动子与调控元件" class="headerlink" title="步骤7：启动子与调控元件"></a>步骤7：启动子与调控元件</h3><p>工具：MEME<a target="_blank" rel="noopener" href="https://meme-suite.org/meme/tools/meme">MEME - Submission form</a></p>
+<p>对 基因上游 200 bp 候选启动子区域进行 MEME 分析</p>
+<blockquote>
+<p>在 DNA 序列中寻找<strong>潜在的转录因子结合位点（motif）</strong></p>
+</blockquote>
+<p>参数：</p>
+<ul>
+<li>nmotifs &#x3D; 5</li>
+</ul>
+<p>​            最多找几个“调控信号”</p>
+<ul>
+<li>minw &#x3D; 6</li>
+</ul>
+<p>​             最短 motif &#x3D; 6 bp，太短假阳多</p>
+<ul>
+<li>maxw &#x3D; 20</li>
+</ul>
+<p>​             最长 motif &#x3D; 20 bp，太长没有生物学意义</p>
+<p>注意：</p>
+<ul>
+<li>单序列结果参考意义有限</li>
+</ul>
+<h3 id="步骤8：蛋白互作网络"><a href="#步骤8：蛋白互作网络" class="headerlink" title="步骤8：蛋白互作网络"></a>步骤8：蛋白互作网络</h3><p>工具：STRING<a target="_blank" rel="noopener" href="https://string-db.org/">STRING: functional protein association networks</a></p>
+<p>参数：</p>
+<ul>
+<li>物种指定</li>
+<li>score ≥ 0.7（推荐）</li>
+</ul>
+<p>👉 看：</p>
+<ul>
+<li>代谢通路</li>
+<li>毒力相关蛋白</li>
+</ul>
+<h3 id="步骤9：信号肽预测"><a href="#步骤9：信号肽预测" class="headerlink" title="步骤9：信号肽预测"></a>步骤9：信号肽预测</h3><p>工具：SignalP 6.0<a target="_blank" rel="noopener" href="https://services.healthtech.dtu.dk/services/SignalP-6.0/">SignalP 6.0 - DTU Health Tech - Bioinformatic Services</a></p>
+<p>👉 输出：</p>
+<ul>
+<li>是否分泌</li>
+<li>切割位点</li>
+</ul>
+<h3 id="步骤10：翻译后修饰"><a href="#步骤10：翻译后修饰" class="headerlink" title="步骤10：翻译后修饰"></a>步骤10：翻译后修饰</h3><p>工具：</p>
+<ul>
+<li>NetPhos（磷酸化）<a target="_blank" rel="noopener" href="https://services.healthtech.dtu.dk/services/NetPhos-3.1/">NetPhos 3.1 - DTU Health Tech - Bioinformatic Services</a></li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>细菌没有O-glycosylation预测工具（常规的如NetOGlyc 主要适用于真核蛋白 O-GalNAc 糖基化预测，与细菌蛋白修饰机制差异较大，不用）</li>
+</ul>
+<h3 id="步骤11：密码子偏好性"><a href="#步骤11：密码子偏好性" class="headerlink" title="步骤11：密码子偏好性"></a>步骤11：密码子偏好性</h3><p>工具：CodonW</p>
+<p>指标：</p>
+<ul>
+<li>有效密码子数（ENC）</li>
+<li>相对同义密码子使用度（RSCU）</li>
+<li>密码子适应指数（CAI）</li>
+<li>最优密码子使用频率（Fop）</li>
+<li>密码子偏好指数（CBI）</li>
+<li>基因整体GC含量</li>
+<li>第三位密码子GC含量（GC3s）</li>
+</ul>
+<p>👉 判断：</p>
+<ul>
+<li>表达水平</li>
+<li>偏好来源（突变 vs 选择）</li>
+</ul>
+<h2 id="关于sRNA调控"><a href="#关于sRNA调控" class="headerlink" title="关于sRNA调控"></a>关于sRNA调控</h2><ul>
+<li>IntaRNA</li>
+<li>sRNA互作</li>
+</ul>
+<p>实际：</p>
+<p>👉 前提是：</p>
+<ul>
+<li>有已注释 sRNA</li>
+</ul>
+<p>如果没有：可以先不做</p>
+<h2 id="最终如何整合结果"><a href="#最终如何整合结果" class="headerlink" title="最终如何整合结果"></a>最终如何整合结果</h2><p>不要只是堆工具，要形成逻辑：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">结构域 → 功能</span><br><span class="line">定位 → 作用位置</span><br><span class="line">系统树 → 保守性</span><br><span class="line">修饰 → 调控</span><br><span class="line">密码子 → 表达</span><br></pre></td></tr></table></figure>
+
+<p>👉 最终输出：</p>
+<blockquote>
+<p>一个“功能模型”</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">mice33</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2026/03/28/bacteria_gene_analysis/">http://example.com/2026/03/28/bacteria_gene_analysis/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">吱吱</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/mice33.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/03/26/%E5%8D%95%E7%BB%86%E8%83%9E%E8%BD%A8%E8%BF%B9%E5%88%86%E6%9E%90_Slingshot%E4%B8%8EtradeSeq/" title="单细胞轨迹分析实战：Slingshot + tradeSeq 单核细胞拟时序分析流程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">单细胞轨迹分析实战：Slingshot + tradeSeq 单核细胞拟时序分析流程</div></div><div class="info-2"><div class="info-item-1">🧭 单细胞轨迹分析实战：Slingshot + tradeSeq 单核细胞拟时序分析流程在单细胞转录组分析中，聚类和注释回答的是“这些细胞是谁”，而轨迹分析更关心“这些细胞可能如何发生连续变化”。 对于单核细胞、巨噬细胞、T 细胞活化状态这类本身具有连续过渡特征的群体，仅仅依赖离散聚类往往是不够的。此时，拟时序分析（pseudotime analysis）可以帮助我们进一步回答：  某一类细胞可能沿着怎样的方向发生状态转换？ 哪些基因会随着状态推进而动态变化？ 哪些基因更接近“起点标记基因”或“终点标记基因”？ 感兴趣基因在轨迹中的表达趋势如何？  本文结合我自己的实际分析流程，整理一套从 Seurat 对象出发，使用 Slingshot 构建轨迹，并结合 tradeSeq 进行拟时序差异基因分析的完整方法。   📚 分析目标与适用场景本文示例细胞群为：  CD14+ Monocytes CD16+ Monocytes  分析目标是探索这两类单核细胞之间是否存在连续状态变化，并进一步观察基因在轨迹中的表达趋势。 这套流程尤其适合下面几类问题：  某个细胞亚群之间具有明显连续过...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/mice33.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">mice33</div><div class="author-info-description">多快好省</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/mice-33" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:wangxp@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2838133128&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">一、写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B%EF%BC%88%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">二、整体流程（核心框架）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">三、操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E8%8E%B7%E5%8F%96%E5%9F%BA%E5%9B%A0%E4%B8%8E%E8%9B%8B%E7%99%BD%E5%BA%8F%E5%88%97"><span class="toc-number">3.1.</span> <span class="toc-text">步骤1：获取基因与蛋白序列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-number">3.1.1.</span> <span class="toc-text">基本特征分析：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E8%9B%8B%E7%99%BD%E7%90%86%E5%8C%96%E6%80%A7%E8%B4%A8%E5%88%86%E6%9E%90"><span class="toc-number">3.2.</span> <span class="toc-text">步骤2：蛋白理化性质分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E4%BA%9A%E7%BB%86%E8%83%9E%E5%AE%9A%E4%BD%8D"><span class="toc-number">3.2.1.</span> <span class="toc-text">步骤3：亚细胞定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A44%EF%BC%9A%E7%BB%93%E6%9E%84%E5%9F%9F%E5%88%86%E6%9E%90"><span class="toc-number">3.2.2.</span> <span class="toc-text">步骤4：结构域分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A45%EF%BC%9A%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84%E9%A2%84%E6%B5%8B"><span class="toc-number">3.2.3.</span> <span class="toc-text">步骤5：三级结构预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A46%EF%BC%9A%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2%E5%88%86%E6%9E%90"><span class="toc-number">3.2.4.</span> <span class="toc-text">步骤6：系统发育分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A47%EF%BC%9A%E5%90%AF%E5%8A%A8%E5%AD%90%E4%B8%8E%E8%B0%83%E6%8E%A7%E5%85%83%E4%BB%B6"><span class="toc-number">3.2.5.</span> <span class="toc-text">步骤7：启动子与调控元件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A48%EF%BC%9A%E8%9B%8B%E7%99%BD%E4%BA%92%E4%BD%9C%E7%BD%91%E7%BB%9C"><span class="toc-number">3.2.6.</span> <span class="toc-text">步骤8：蛋白互作网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A49%EF%BC%9A%E4%BF%A1%E5%8F%B7%E8%82%BD%E9%A2%84%E6%B5%8B"><span class="toc-number">3.2.7.</span> <span class="toc-text">步骤9：信号肽预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A410%EF%BC%9A%E7%BF%BB%E8%AF%91%E5%90%8E%E4%BF%AE%E9%A5%B0"><span class="toc-number">3.2.8.</span> <span class="toc-text">步骤10：翻译后修饰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A411%EF%BC%9A%E5%AF%86%E7%A0%81%E5%AD%90%E5%81%8F%E5%A5%BD%E6%80%A7"><span class="toc-number">3.2.9.</span> <span class="toc-text">步骤11：密码子偏好性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EsRNA%E8%B0%83%E6%8E%A7"><span class="toc-number">3.3.</span> <span class="toc-text">关于sRNA调控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E5%A6%82%E4%BD%95%E6%95%B4%E5%90%88%E7%BB%93%E6%9E%9C"><span class="toc-number">3.4.</span> <span class="toc-text">最终如何整合结果</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/28/bacteria_gene_analysis/" title="细菌基因生物信息学分析通用教程（从零到完整流程）">细菌基因生物信息学分析通用教程（从零到完整流程）</a><time datetime="2026-03-28T15:41:55.085Z" title="发表于 2026-03-28 23:41:55">2026-03-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/26/%E5%8D%95%E7%BB%86%E8%83%9E%E8%BD%A8%E8%BF%B9%E5%88%86%E6%9E%90_Slingshot%E4%B8%8EtradeSeq/" title="单细胞轨迹分析实战：Slingshot + tradeSeq 单核细胞拟时序分析流程">单细胞轨迹分析实战：Slingshot + tradeSeq 单核细胞拟时序分析流程</a><time datetime="2026-03-26T05:35:00.000Z" title="发表于 2026-03-26 13:35:00">2026-03-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/23/singlecell%20seurat%20pipeline/" title="从GEO原始矩阵到细胞注释：一套可复用的Seurat单细胞分析流程">从GEO原始矩阵到细胞注释：一套可复用的Seurat单细胞分析流程</a><time datetime="2026-03-23T03:10:00.000Z" title="发表于 2026-03-23 11:10:00">2026-03-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/21/Hexo%E5%8D%9A%E5%AE%A2%E4%BB%8E%E6%9C%AC%E5%9C%B0%E5%88%B0%E4%B8%8A%E7%BA%BF%EF%BC%9AGit%E3%80%81Hexo%E3%80%81GitHub%20Pages%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%85%B3%E7%B3%BB%E6%A2%B3%E7%90%86/" title="Hexo博客从本地到上线：Git、Hexo、GitHub Pages与自定义域名关系梳理">Hexo博客从本地到上线：Git、Hexo、GitHub Pages与自定义域名关系梳理</a><time datetime="2026-03-21T14:30:00.000Z" title="发表于 2026-03-21 22:30:00">2026-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/11/Linux-RServer%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%85%8D%E7%BD%AEArial%E5%AD%97%E4%BD%93%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B/" title="Linux RServer环境下配置Arial字体完整教程"><img src="/img/linux-r-fonts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux RServer环境下配置Arial字体完整教程"/></a><div class="content"><a class="title" href="/2025/08/11/Linux-RServer%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%85%8D%E7%BD%AEArial%E5%AD%97%E4%BD%93%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B/" title="Linux RServer环境下配置Arial字体完整教程">Linux RServer环境下配置Arial字体完整教程</a><time datetime="2025-08-11T15:05:00.000Z" title="发表于 2025-08-11 23:05:00">2025-08-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By mice33</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","locale":{"placeholder":"欢迎留言讨论~"},"avatar":"monsterid","avatarCDN":"https://www.gravatar.com/avatar/","wordLimit":0,"pageSize":10}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://comments.mice33.top/',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
